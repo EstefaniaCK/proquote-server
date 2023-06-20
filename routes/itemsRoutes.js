@@ -1,4 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const { getAllItems } = require('../controllers/itemsController');
 
-module.exports = router; 
+router.get('/projects/:projectid/items', getAllItems);
+module.exports = router;
