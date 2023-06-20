@@ -1,4 +1,6 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const { addBids } = require('../controllers/bidsController');
 
-module.exports = router; 
+router.post('/bids', addBids);
+
+module.exports = router;
