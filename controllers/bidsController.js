@@ -15,7 +15,6 @@ const addBids = (req, res) => {
                 }
             )
     }
-
 };
 
 module.exports = {
