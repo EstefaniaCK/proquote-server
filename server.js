@@ -16,5 +16,5 @@ app.use('/', bidsRoutes)
 
 
 app.listen(8080, () => {
-    console.log('server has starteed')
+    console.log('server is working')
 })

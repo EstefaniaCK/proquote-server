@@ -1,43 +1,21 @@
 
 const knex = require('knex')(require('../knexfile'));
 
-const addBids = (req, res) => {
-    const list = req.body
-    for (item of list) {
-        console.log(item)
-        knex('users-bids')
-            .insert(
-                {
-                    item_id: item.item_id,
-                    user_id: item.user_id,
-                    project_id: item.project_id,
-                    unit_price: item.unit_price,
-                }
-            )
-    }
+const addBids = async (req, res) => {
+    try {
+        console.log("LOOK AT MEE", req.body);
+        await knex('users-bids').insert(
+          (req.body) 
+        );
+    res.status(200).json({ message: 'Bids added successfully' });
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to add bids' });
+}
 };
 
 module.exports = {
-    addBids
-}
+    addBids,
+};
 
 
-// const addBids = (req, res) => {
-//     const list = req.body
-//     for (item of list) {
-//         console.log(item)
-//         knex('bids')
-//             .insert(
-//                 {
-//                     item_id: item.item_id,
-//                     user_id: item.user_id,
-//                     project_id: item.project_id,
-//                     unit_price: item.unit_price,
-//                 }
-//             )
-//     }
-// };
-
-// module.exports = {
-//     addBids
-// }

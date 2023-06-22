@@ -7,7 +7,6 @@ const getAllItems = (req, res) => {
             if (data.length === 0) {
                 return res.status(404).send('Unable to retrieve items');
             } else { res.status(200).json(data) }
-
         })
         .catch((error) => {
             console.error(error);
