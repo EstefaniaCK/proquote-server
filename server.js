@@ -8,7 +8,7 @@ const bidsRoutes = require('./routes/bidsRoutes');
 
 app.use(cors());
 app.use(express.json());
-app.use('/', projectsRoutes)
+app.use('/projects', projectsRoutes)
 app.use('/', itemsRoutes)
 app.use('/', bidsRoutes)
 

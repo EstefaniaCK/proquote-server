@@ -4,44 +4,17 @@ const itemsData = require('../seed-data/items');
 const bidsData = require('../seed-data/bids');
 const userBidsData = require('../seed-data/users-bids');
 
-exports.seed = function (knex) {
-    return knex('bids')
-        .del()
-        .then(function () {
-            return knex('bids').del();
-        })
-        .then(function () {
-            return knex('users-bids').del();
-        })
-        .then(function () {
-            return knex('items').del();
-        })
-        .then(function () {
-            return knex('users').del();
-        })
-        .then(function () {
-            return knex('projects').del();
-        })
+exports.seed = async function (knex) {
+    await knex('users-bids').del();
+    await knex('bids').del();
+    await knex('items').del();
+    await knex('projects').del();
+    await knex('users').del();
 
+    await knex('users').insert(usersData);
+    await knex('projects').insert(projectsData);
+    await knex('items').insert(itemsData);
+    await knex('bids').insert(bidsData);
+    await knex('users-bids').insert(userBidsData);
 
-
-        .then(function () {
-            return knex('users').insert(usersData);
-        })
-
-        .then(function () {
-            return knex('projects').insert(projectsData);
-        })
-
-        .then(function () {
-            return knex('items').insert(itemsData);
-        })
-
-        .then(function () {
-            return knex('bids').insert(bidsData);
-        })
-
-        .then(function () {
-            return knex('users-bids').insert(userBidsData);
-        })
 };
