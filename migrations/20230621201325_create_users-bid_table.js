@@ -7,7 +7,7 @@ exports.up = function (knex) {
 
 
         table.foreign('item_id').references('items.id');
-        table.foreign('bid_id').references('items.id');
+        table.foreign('bid_id').references('bids.id');
     });
 };
 
