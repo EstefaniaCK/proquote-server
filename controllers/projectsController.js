@@ -35,30 +35,8 @@ const bids = async (req, res) => {
         }
 
         console.log(items);
-
-        /*.join('items', 'items.project_id', 'projects.id')
-        .join('bids', 'bids.project_id', 'projects.id')
-        .join('users-bids', 'users-bids.bid_id', 'bids.id')
-        .join('users', 'users.id', 'bids.user_id')
-        */
-
         res.json(items);
-        /*
-    [
-        {
-            item_name:
-            unit:
-            quantity:
-            bids: [
-                {
-                    user_name:
-                    user_id:
-                    bid:
-                }
-            ]
-        }
-    ])
-    */
+    
     }
     catch (error) {
         console.log(error)
