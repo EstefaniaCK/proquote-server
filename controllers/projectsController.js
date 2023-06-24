@@ -16,6 +16,7 @@ const getAllProjects = (req, res) => {
 
 const bids = async (req, res) => {
     const { id } = req.params;
+
     try {
         const items = await knex('items')
             .where('project_id', id);
@@ -36,7 +37,7 @@ const bids = async (req, res) => {
 
         console.log(items);
         res.json(items);
-    
+
     }
     catch (error) {
         console.log(error)

@@ -7,8 +7,9 @@ const addBids = async (req, res) => {
         const [bidId] = await knex('bids').insert({
             project_id: req.body.project_id,
             user_id: req.body.user_id,
+            
         });
-
+        console.log(bidId);
         const pricingList = req.body.pricingList.map((price) => ({
             ...price,
             bid_id: bidId,
