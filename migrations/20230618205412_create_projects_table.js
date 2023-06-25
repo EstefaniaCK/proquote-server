@@ -1,4 +1,3 @@
-
 exports.up = function (knex) {
     return knex.schema.createTable('projects', function (table) {
         table.increments('id').primary();
