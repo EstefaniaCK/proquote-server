@@ -59,4 +59,34 @@ module.exports = [
         item_id: 5,
         unit_price: 65
     },
+    {
+        id: 11,
+        bid_id: 3,
+        item_id: 6,
+        unit_price: 1
+    },
+    {
+        id: 12,
+        bid_id: 3,
+        item_id: 7,
+        unit_price: 2
+    },
+    {
+        id: 13,
+        bid_id: 3,
+        item_id: 8,
+        unit_price: 3
+    },
+    {
+        id: 14,
+        bid_id: 3,
+        item_id: 9,
+        unit_price: 4
+    },
+    {
+        id: 15,
+        bid_id: 3,
+        item_id: 10,
+        unit_price: 5
+    },
 ]
